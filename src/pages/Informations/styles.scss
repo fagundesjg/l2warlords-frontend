@@ -1,0 +1,28 @@
+.informations {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 100px;
+
+	.content {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		background-color: #201d2a;
+		max-width: 600px;
+		width: 90%;
+		margin-left: 5%;
+		margin-right: 5%;
+		margin-bottom: 30px;
+		h1 {
+			color: #f68902;
+			margin-bottom: 20px;
+		}
+		p {
+			color: white;
+			margin-bottom: 5px;
+			margin-left: 5%;
+			margin-right: 5%;
+		}
+	}
+}

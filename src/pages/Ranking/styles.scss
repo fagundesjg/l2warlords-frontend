@@ -1,0 +1,58 @@
+.ranking {
+	margin-top: 130px;
+	min-height: calc(100vh - 240px);
+
+	.content {
+		background-color: #201d2a;
+		width: auto;
+		margin-right: 5%;
+		margin-left: 5%;
+		max-width: 600px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		padding: 20px;
+
+		.title {
+			font-size: 20px;
+			color: #f68902;
+		}
+
+		.description {
+			text-align: center;
+			color: white;
+		}
+
+		table,
+		tr,
+		td,
+		th {
+			border: none;
+		}
+
+		table {
+			min-width: 300px;
+			width: 90%;
+			color: #cfcfcf;
+			tr {
+				height: 30px;
+				td,
+				th {
+					font-size: 12px;
+					padding: 5px 5px 5px 10px;
+				}
+				&:hover {
+					color: white;
+					cursor: pointer;
+				}
+			}
+			tr:nth-child(even) {
+				background-color: #1b1a22;
+			}
+			tr:nth-child(odd) {
+				background-color: #11111a;
+			}
+		}
+	}
+}

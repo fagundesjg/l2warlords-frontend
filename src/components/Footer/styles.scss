@@ -1,0 +1,19 @@
+.footer {
+	height: 80px;
+	position: relative;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	width: 100%;
+	margin-top: 30px;
+	background-color: #201d2a;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	p {
+		text-align: center;
+		color: white;
+		padding-left: 5%;
+		padding-right: 5%;
+	}
+}
