@@ -17,7 +17,9 @@ export default class Register extends Component {
 	handleSubmit = async (data, { resetForm }) => {
 		let error = "";
 		let status = false;
-		if (data.password < 8) {
+		if (data.login < 6) {
+			error = "Erro. O login deve ter no mínimo  caracteres!";
+		} else if (data.password < 8) {
 			error = "Erro. A senha deve ter no mínimo 8 caracteres!";
 		} else if (data.password !== data.confirmPassword) {
 			error = "Erro. As senhas devem ser iguais!";
@@ -39,6 +41,7 @@ export default class Register extends Component {
 				await api.post("/accounts", accountData);
 			} else {
 				status = false;
+				error = "Erro. Já existe uma conta com esse login!";
 			}
 		}
 
@@ -70,23 +73,23 @@ export default class Register extends Component {
 						<Form onSubmit={this.handleSubmit}>
 							<div className="register-field">
 								<p>Login *</p>
-								<Input type="text" name="login" />
+								<Input type="text" name="login" required />
 							</div>
 							<div className="register-field">
 								<p>Senha *</p>
-								<Input type="password" name="password" />
+								<Input type="password" name="password" required />
 							</div>
 							<div className="register-field">
 								<p>Confirmar senha *</p>
-								<Input type="password" name="confirmPassword" />
+								<Input type="password" name="confirmPassword" required />
 							</div>
 							<div className="register-field">
 								<p>E-Mail *</p>
-								<Input type="text" name="email" />
+								<Input type="email" name="email" required />
 							</div>
 							<div className="register-field">
 								<p>Confirmar E-mail *</p>
-								<Input type="text" name="confirmEmail" />
+								<Input type="email" name="confirmEmail" required />
 							</div>
 							<div className="register-button">
 								<button type="submit">
