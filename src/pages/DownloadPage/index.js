@@ -15,7 +15,13 @@ export default function DownloadPage() {
 							Caso você não possua o cliente de Lineage 2 High Five, faça o
 							download no link a seguir:
 						</p>
-						<button style={{ marginTop: "20px" }}>
+						<button
+							style={{ marginTop: "20px" }}
+							onClick={() =>
+								(window.location.href =
+									"https://drive.google.com/open?id=1MrmMPYFFW5N8Yj2si1J8kMAp8xRgmA6L")
+							}
+						>
 							Download Cliente High Five
 						</button>
 						<p className="description" style={{ marginTop: "20px" }}>
@@ -23,7 +29,13 @@ export default function DownloadPage() {
 							deletar a pasta System e copiar e colar a nossa. Para fazer o
 							download clique no link a seguir:
 						</p>
-						<button style={{ marginTop: "20px", marginBottom: "10px" }}>
+						<button
+							style={{ marginTop: "20px", marginBottom: "10px" }}
+							onClick={() =>
+								(window.location.href =
+									"https://drive.google.com/open?id=1Yzrmw15mh13EYc6ylVgsGBWIhApqlrcg")
+							}
+						>
 							Download System L2Warlords
 						</button>
 					</div>
