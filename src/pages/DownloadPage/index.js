@@ -4,6 +4,11 @@ import Footer from "../../components/Footer";
 import "./styles.scss";
 
 export default function DownloadPage() {
+	const system =
+		"http://www.mediafire.com/file/0f36kqzaofune0e/system.zip/file";
+	const client =
+		"http://www.mediafire.com/file/pa5sbrh96an1ewo/Lineage_II_High_Five_Part_5.rar_%25281%2529.torrent/file";
+
 	return (
 		<Fragment>
 			<Navbar />
@@ -17,10 +22,7 @@ export default function DownloadPage() {
 						</p>
 						<button
 							style={{ marginTop: "20px" }}
-							onClick={() =>
-								(window.location.href =
-									"https://drive.google.com/open?id=1MrmMPYFFW5N8Yj2si1J8kMAp8xRgmA6L")
-							}
+							onClick={() => (window.location.href = system)}
 						>
 							Download Cliente High Five
 						</button>
@@ -31,10 +33,7 @@ export default function DownloadPage() {
 						</p>
 						<button
 							style={{ marginTop: "20px", marginBottom: "10px" }}
-							onClick={() =>
-								(window.location.href =
-									"https://drive.google.com/open?id=1Yzrmw15mh13EYc6ylVgsGBWIhApqlrcg")
-							}
+							onClick={() => (window.location.href = client)}
 						>
 							Download System L2Warlords
 						</button>
