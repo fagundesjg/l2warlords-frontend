@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { Form, Input } from "@rocketseat/unform";
 import api from "../../services/api";
 import Navbar from "../../components/Navbar";
@@ -6,7 +6,7 @@ import Footer from "../../components/Footer";
 import { toast } from "react-toastify";
 import "./styles.scss";
 
-export default class Register extends Component {
+export default class ChangePassword extends Component {
 	state = {
 		loading: false
 	};
@@ -36,34 +36,22 @@ export default class Register extends Component {
 				"Erro. Certifique-se que no login contém apenas letras e numeros.";
 		} else if (data.login < 6) {
 			error = "Erro. O login deve ter no mínimo 6 caracteres!";
-		} else if (data.password < 8) {
+		} else if (data.newPassword < 8) {
 			error = "Erro. A senha deve ter no mínimo 8 caracteres!";
-		} else if (data.password !== data.confirmPassword) {
-			error = "Erro. As senhas devem ser iguais!";
-		} else if (data.email !== data.confirmEmail) {
-			error = "Erro. Os e-mail devem ser iguais!";
+		} else if (data.newPassword !== data.confirmNewPassword) {
+			error = "Erro. As novas senhas devem ser iguais!";
 		} else {
 			this.setState({ loading: true });
 
-			const { data: login } = await api.get(
-				"/accounts/show/login=" + data.login
-			);
+			const response = await api.put("/accounts", data);
 
-			if (login.length === 0) {
-				status = true;
-				const accountData = {};
-				accountData["login"] = data.login;
-				accountData["email"] = data.email;
-				accountData["password"] = data.password;
-				await api.post("/accounts", accountData);
-			} else {
-				status = false;
-				error = "Erro. Já existe uma conta com esse login!";
-			}
+			if (response.data.error) {
+				error = response.data.error;
+			} else status = true;
 		}
 
 		if (status) {
-			this.successNotify("Conta cadastrada com sucesso!");
+			this.successNotify("Senha alterada com sucesso!");
 		} else {
 			this.errorNotify(error);
 		}
@@ -77,16 +65,14 @@ export default class Register extends Component {
 	render() {
 		const { loading } = this.state;
 		return (
-			<div className="register">
+			<Fragment>
 				<Navbar />
-				<div className="content">
-					<div className="register-box">
-						<p className="title">Criar Conta</p>
+				<div className="change-password">
+					<div className="content">
+						<p className="title">Alterar Senha</p>
 						<p className="description">
-							Para criar sua conta, é necessário preencher todos os campos a
-							seguir, e não se esqueça de utilizar um e-mail válido!
-							{/* , pois
-							enviaremos um link de ativação para você começar a jogar! */}
+							Para alterar a senha, é necessário preencher todos os campos a
+							seguir.
 						</p>
 						<Form onSubmit={this.handleSubmit}>
 							<div className="register-field">
@@ -94,36 +80,31 @@ export default class Register extends Component {
 								<Input type="text" name="login" required />
 							</div>
 							<div className="register-field">
-								<p>Senha *</p>
-								<Input type="password" name="password" required />
+								<p>Senha Atual*</p>
+								<Input type="password" name="oldPassword" required />
 							</div>
 							<div className="register-field">
-								<p>Confirmar senha *</p>
-								<Input type="password" name="confirmPassword" required />
+								<p>Nova Senha *</p>
+								<Input type="password" name="newPassword" required />
 							</div>
 							<div className="register-field">
-								<p>E-Mail *</p>
-								<Input type="email" name="email" required />
-							</div>
-							<div className="register-field">
-								<p>Confirmar E-mail *</p>
-								<Input type="email" name="confirmEmail" required />
+								<p>Confirmar Nova Senha *</p>
+								<Input type="password" name="confirmNewPassword" required />
 							</div>
 							<div className="register-button">
 								<button type="submit">
 									{loading ? (
 										<i className="fa fa-spinner fa-pulse" />
 									) : (
-										"CADASTRAR"
+										"CONFIRMAR"
 									)}
 								</button>
-								<a href="/recuperar-senha">Recuperar senha</a>
 							</div>
 						</Form>
 					</div>
 				</div>
 				<Footer />
-			</div>
+			</Fragment>
 		);
 	}
 }

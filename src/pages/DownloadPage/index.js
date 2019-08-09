@@ -22,7 +22,7 @@ export default function DownloadPage() {
 						</p>
 						<button
 							style={{ marginTop: "20px" }}
-							onClick={() => (window.location.href = system)}
+							onClick={() => (window.location.href = client)}
 						>
 							Download Cliente High Five
 						</button>
@@ -33,7 +33,7 @@ export default function DownloadPage() {
 						</p>
 						<button
 							style={{ marginTop: "20px", marginBottom: "10px" }}
-							onClick={() => (window.location.href = client)}
+							onClick={() => (window.location.href = system)}
 						>
 							Download System L2Warlords
 						</button>

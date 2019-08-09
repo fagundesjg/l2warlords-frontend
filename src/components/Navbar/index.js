@@ -24,7 +24,16 @@ export default class Navbar extends Component {
 							</span>
 						</li>
 						<li>
-							<a href="/cadastrar">Cadastro</a>
+							<span className="dropdown">
+								<button className="dropbtn">
+									Cadastro <i className="fa fa-angle-down" />
+								</button>
+								<div className="dropdown-content">
+									<a href="/cadastrar">Criar Conta</a>
+									<a href="/trocar-senha">Trocar Senha</a>
+									<a href="/">Recuperar Senha</a>
+								</div>
+							</span>
 						</li>
 						<li>
 							<a href="/downloads">Downloads</a>

@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import Home from "../pages/Home";
 import Register from "../pages/Register";
+import ChangePassword from "../pages/ChangePassword";
 import Informations from "../pages/Informations";
 import DownloadPage from "../pages/DownloadPage";
 import Donates from "../pages/Donates";
@@ -16,6 +17,7 @@ const Routes = () => (
 			<Switch>
 				<Route exact path="/" component={Home} />
 				<Route exact path="/cadastrar" component={Register} />
+				<Route exact path="/trocar-senha" component={ChangePassword} />
 				<Route exact path="/informacoes" component={Informations} />
 				<Route exact path="/downloads" component={DownloadPage} />
 				<Route exact path="/doacoes" component={Donates} />

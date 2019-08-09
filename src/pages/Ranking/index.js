@@ -37,7 +37,7 @@ export default class Ranking extends Component {
 		return (
 			<Fragment>
 				<Navbar />
-				<div className="rules" align="center">
+				<div className="ranking" align="center">
 					<div className="content" align="center">
 						<p className="title">Top PvP</p>
 						<table cellSpacing="0">

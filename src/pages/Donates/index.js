@@ -9,15 +9,18 @@ export default function Donates() {
 		{ item: "Necklace of Frintezza", value: 80 },
 		{ item: "Necklace of Valakas", value: 70 },
 		{ item: "Earning of Antharas", value: 60 },
+		{ item: "Ring of Belleth", value: 50 },
 		{ item: "Ring of Baium", value: 50 },
 		{ item: "Earning of Zaken", value: 40 },
 		{ item: "Ring of Queen Ant", value: 30 },
 		{ item: "Dragão Voador", value: 50 },
 		{ item: "Clan LvL 11 Full Skill", value: 100 },
-		{ item: "300x Gold Einhashed", value: 50 },
-		{ item: "750x Gold Einhashed", value: 100 },
-		{ item: "2000x Gold Einhashed", value: 200 },
-		{ item: "10000x Gold Einhashed", value: 500 }
+		{ item: "100x Gold Einhashed", value: 10 },
+		{ item: "250x Gold Einhashed", value: 20 },
+		{ item: "600x Gold Einhashed", value: 50 },
+		{ item: "1300x Gold Einhashed", value: 100 },
+		{ item: "2750x Gold Einhashed", value: 200 },
+		{ item: "5800x Gold Einhashed", value: 500 }
 	];
 	return (
 		<Fragment>

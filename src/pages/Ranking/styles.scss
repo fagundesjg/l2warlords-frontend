@@ -3,7 +3,7 @@
 	min-height: calc(100vh - 240px);
 
 	.content {
-		background-color: #201d2a;
+		background-color: rgba(32, 29, 42, 0.9);
 		width: auto;
 		margin-right: 5%;
 		margin-left: 5%;
@@ -17,6 +17,7 @@
 		.title {
 			font-size: 20px;
 			color: #f68902;
+			margin-bottom: 10px;
 		}
 
 		.description {
