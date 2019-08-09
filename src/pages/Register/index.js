@@ -117,7 +117,6 @@ export default class Register extends Component {
 										"CADASTRAR"
 									)}
 								</button>
-								<a href="/recuperar-senha">Recuperar senha</a>
 							</div>
 						</Form>
 					</div>
