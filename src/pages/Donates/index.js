@@ -57,9 +57,9 @@ export default function Donates() {
 					</p>
 					<p className="description donate">
 						Você deverá enviar um e-mail para{" "}
-						<font color="#f68902">doacao@l2warlords.com</font> informando o
-						valor, itens que deseja de brinde e qual método deseja utilizar para
-						doar. Logo em seguida enviaremos um e-mail com um boleto ou os dados
+						<font color="#f68902">l2warlords@outlook</font> informando o valor,
+						itens que deseja de brinde e qual método deseja utilizar para doar.
+						Logo em seguida enviaremos um e-mail com um boleto ou os dados
 						necessários para a transferência/depósito.
 					</p>
 					<p className="description donate">
@@ -71,7 +71,7 @@ export default function Donates() {
 					</p>
 					<p className="description" style={{ marginBottom: "30px" }}>
 						Envie um e-mail para{" "}
-						<font color="#f68902">suporte@l2warlords.com</font>
+						<font color="#f68902">l2warlords@outlook.com</font>
 					</p>
 				</div>
 			</div>
