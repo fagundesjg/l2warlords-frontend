@@ -15,12 +15,12 @@ export default function Donates() {
 		{ item: "Ring of Queen Ant", value: 30 },
 		{ item: "Dragão Voador", value: 50 },
 		{ item: "Clan LvL 11 Full Skill", value: 100 },
-		{ item: "100x Gold Einhashed", value: 10 },
-		{ item: "250x Gold Einhashed", value: 20 },
-		{ item: "600x Gold Einhashed", value: 50 },
-		{ item: "1300x Gold Einhashed", value: 100 },
-		{ item: "2750x Gold Einhashed", value: 200 },
-		{ item: "5800x Gold Einhashed", value: 500 }
+		{ item: "50x Gold Einhashed", value: 10 },
+		{ item: "125x Gold Einhashed", value: 20 },
+		{ item: "300x Gold Einhashed", value: 50 },
+		{ item: "650x Gold Einhashed", value: 100 },
+		{ item: "1325x Gold Einhashed", value: 200 },
+		{ item: "2700x Gold Einhashed", value: 500 }
 	];
 	return (
 		<Fragment>
