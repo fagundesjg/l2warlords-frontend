@@ -9,7 +9,9 @@ export default class Infos extends Component {
 
 	componentDidMount = async () => {
 		const users = await api.get("/characters/filter=players_online");
-		this.setState({ usersOnline: users.length });
+		if (users.length > 0) {
+			this.setState({ usersOnline: users.length });
+		}
 	};
 
 	render() {
@@ -17,14 +19,14 @@ export default class Infos extends Component {
 			<div className="info">
 				<p>
 					Login Server:{" "}
-					<font color="FF0000">
-						<b>OFFLINE</b>
+					<font color="00FF00">
+						<b>ONLINE</b>
 					</font>
 				</p>
 				<p>
 					Game Server:{" "}
-					<font color="FF0000">
-						<b>OFFLINE</b>
+					<font color="00FF00">
+						<b>ONLINE</b>
 					</font>
 				</p>
 				<p>
