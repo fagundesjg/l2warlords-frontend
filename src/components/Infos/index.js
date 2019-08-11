@@ -9,7 +9,6 @@ export default class Infos extends Component {
 
 	componentDidMount = async () => {
 		const { data: users } = await api.get("/characters/filter=players_online");
-		console.log(users);
 		if (users.length > 0) {
 			this.setState({ usersOnline: users.length });
 		}
