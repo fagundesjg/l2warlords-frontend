@@ -22,7 +22,6 @@ export default class GrandBosses extends Component {
 
 	componentDidMount = async () => {
 		const { data } = await api.get("/grandbosses");
-		console.log(data);
 		var bosses = this.state.grandbosses;
 		data.forEach(d => {
 			bosses.forEach(b => {

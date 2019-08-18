@@ -15,8 +15,6 @@ export default class Infos extends Component {
 		const { data: characters } = await api.get(
 			"/characters/filter=total_players"
 		);
-		console.log(accounts);
-		console.log(characters);
 		this.setState({
 			usersOnline: users.length || 0,
 			accounts: accounts.length || 0,
