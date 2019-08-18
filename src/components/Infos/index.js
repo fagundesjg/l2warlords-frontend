@@ -4,17 +4,29 @@ import "./styles.scss";
 
 export default class Infos extends Component {
 	state = {
-		usersOnline: 0
+		usersOnline: 0,
+		accounts: 0,
+		characters: 0
 	};
 
 	componentDidMount = async () => {
 		const { data: users } = await api.get("/characters/filter=players_online");
-		if (users.length > 0) {
-			this.setState({ usersOnline: users.length });
-		}
+		const { data: accounts } = await api.get("/accounts");
+		const { data: characters } = await api.get(
+			"/characters/filter=total_players"
+		);
+		console.log(accounts);
+		console.log(characters);
+		this.setState({
+			usersOnline: users.length || 0,
+			accounts: accounts.length || 0,
+			characters: characters.length || 0
+		});
 	};
 
 	render() {
+		const { usersOnline, accounts, characters } = this.state;
+
 		return (
 			<div className="info">
 				<p>
@@ -30,7 +42,13 @@ export default class Infos extends Component {
 					</font>
 				</p>
 				<p>
-					Players Online: <b>{this.state.usersOnline}</b>
+					Players Online: <b>{usersOnline}</b>
+				</p>
+				<p>
+					Contas: <b>{accounts}</b>
+				</p>
+				<p>
+					População: <b>{characters}</b>
 				</p>
 			</div>
 		);

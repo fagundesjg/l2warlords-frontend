@@ -12,14 +12,17 @@ export default class GrandBosses extends Component {
 			{ id: 29001, status: "off" },
 			{ id: 29006, status: "off" },
 			{ id: 29014, status: "off" },
+			{ id: 29022, status: "off" },
 			{ id: 29020, status: "off" },
 			{ id: 29028, status: "off" },
-			{ id: 29118, status: "off" }
+			{ id: 29118, status: "off" },
+			{ id: 29068, status: "off" }
 		]
 	};
 
 	componentDidMount = async () => {
 		const { data } = await api.get("/grandbosses");
+		console.log(data);
 		var bosses = this.state.grandbosses;
 		data.forEach(d => {
 			bosses.forEach(b => {
